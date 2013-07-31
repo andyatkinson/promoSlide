@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script src='jquery-2.0.3.min.js'></script>
+    <script src='jquery.sliderPromo.js'></script>
+    <style>
+      .promo-container {
+        position:fixed;
+        bottom:0;
+        right:0;
+        width:400px;
+        height:50px;
+        padding:10px;
+        background:#f0f0f0;
+      }
+      .promo-container .one-line-text {
+        font-size:20px;
+        line-height:20px;
+        font-family:Helvetica,Arial,sans-serif;
+        color:#555;
+        white-space:nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This type of slide-out promotional banner is being used on lots of websites. I wanted to make a simple plugin version of this pattern so that it could be used somewhere else. I will add more style and features over time.</p>
+        
+    <div style="height:1000px;">This div is 1000 pixels tall. Scroll down to see a slideout promotion. Scroll up to see it disappear.</div>
+
+    <script>
+    $(function() {
+      $('body').sliderPromo({
+        textContent: 'customize me!!',
+        templateHTML: '<p class="one-line-text" style="color:red;">{{content}}</p>'
+      });
+    });
+    </script>
+  </body>
+</html>
