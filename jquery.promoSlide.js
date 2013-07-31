@@ -20,18 +20,18 @@ jQuery.fn.slideLeftShow = function(speed, callback) {
 
 (function($) { 
   
-  var PROP_NAME = 'sliderPromo';
+  var PROP_NAME = 'promoSlide';
   
-function SliderPromo() {
+function PromoSlide() {
   this._defaults = {
     textContent: 'placeholder content',
     templateHTML: '<p class="one-line-text">{{content}}</p>'
   };
 }
 
-$.extend(SliderPromo.prototype, {
+$.extend(PromoSlide.prototype, {
   
-  markerClassName: 'hasSliderPromoPlugin',
+  markerClassName: 'hasPromoSlidePlugin',
   templateContentRegexp: /\{\{content\}\}/,
   
   setDefaults: function(settings) {
@@ -39,7 +39,7 @@ $.extend(SliderPromo.prototype, {
     return this;
   },
   
-  _attachSliderPromoPlugin: function(target, settings) {
+  _attachPromoSlidePlugin: function(target, settings) {
     target = $(target);
     if (target.hasClass(this.markerClassName)) {
       return;
@@ -55,7 +55,7 @@ $.extend(SliderPromo.prototype, {
     $.extend(instance.settings, settings);
     
     var templateMarkupParts = [];
-    templateMarkupParts.push("<div id='sliderPromoContainer' class='promo-container'>");
+    templateMarkupParts.push("<div id='promoSlideContainer' class='promo-container'>");
     
     if (this.templateContentRegexp.test(instance.settings.templateHTML)) {
       templateMarkupParts.push(instance.settings.templateHTML.replace(this.templateContentRegexp, instance.settings.textContent));
@@ -63,7 +63,7 @@ $.extend(SliderPromo.prototype, {
     templateMarkupParts.push("</div>");
 
     $(element).append(templateMarkupParts.join(''));
-    var c = $("#sliderPromoContainer");
+    var c = $("#promoSlideContainer");
     c.hide();
     
     $(window).bind('scroll', function() {
@@ -78,23 +78,23 @@ $.extend(SliderPromo.prototype, {
 
 var getters = ['settings'];
 
-$.fn.sliderPromo = function(options) {
+$.fn.promoSlide = function(options) {
   var otherArgs = Array.prototype.slice.call(arguments, 1);
   if ($.inArray(options, getters) > -1) {
-    return $.sliderPromo['_' + options + 'SliderPromo'].
-      apply($.sliderPromo, [this[0]].concat(otherArgs));
+    return $.promoSlide['_' + options + 'promoSlide'].
+      apply($.promoSlide, [this[0]].concat(otherArgs));
   }
   return this.each(function() {
     if (typeof options == 'string') {
-      $.sliderPromo['_' + options + 'SliderPromo'].
-        apply($.sliderPromo, [this].concat(otherArgs));
+      $.promoSlide['_' + options + 'promoSlide'].
+        apply($.promoSlide, [this].concat(otherArgs));
     }
     else {
-      $.sliderPromo._attachSliderPromoPlugin(this, options || {});
+      $.promoSlide._attachPromoSlidePlugin(this, options || {});
     }
   });
 };
 
-$.sliderPromo = new SliderPromo();
+$.promoSlide = new PromoSlide();
 
 })(jQuery);
