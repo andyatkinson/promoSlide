@@ -19,12 +19,29 @@
         color:#555;
         white-space:nowrap;
       }
+      
+      body {
+        background:#ddd;
+        font-family:Helvetica,Arial,sans-serif;
+        font-size:16px;
+        line-height:16px;
+      }
+      #page-content {
+        padding:20px;
+        width:800px;
+        background:#fff;
+        margin:0 auto;
+      }
     </style>
   </head>
   <body>
-    <p>This type of slide-out promotional banner is being used on lots of websites. I wanted to make a simple plugin version of this pattern so that it could be used somewhere else. I will add more style and features over time.</p>
+    <div id="page-content">
+      <h1>Promo Slide</h1>
+      <h3>Because we need more annoying things like this on the internet! :)</h3>
+      <p>This type of slide-out promotional banner is being used on lots of websites. I wanted to make a simple plugin version of this pattern so that it could be used somewhere else.</p>
         
-    <div style="height:1000px;">This div is 1000 pixels tall. Scroll down to see a slideout promotion. Scroll up to see it disappear.</div>
+    <div style="height:1000px;border:1px dotted;font-style:italic;color:#bbb;">This div is 1000 pixels tall. Scroll down to see a slideout promotion. Scroll up to see it disappear.</div>
+    </div>
 
     <script>
     $(function() {
