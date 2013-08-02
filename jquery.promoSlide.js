@@ -24,15 +24,22 @@ jQuery.fn.slideLeftShow = function(speed, callback) {
   
 function PromoSlide() {
   this._defaults = {
-    textContent: 'placeholder content',
-    templateHTML: '<p class="one-line-text">{{content}}</p>'
+    headerText: 'interesting header',
+    bodyText: 'an interesting section',
+    templateHTML: '<div id="promoSlideTemplate">' +
+                    '<div class="top"><h1>{{header}}</h1></div>' +
+                    '<div class="bottom"><p>{{body}}</p>' +
+                    '<a href="#" class="dismiss">dismiss</a></div>' +
+                  '</div>'
   };
 }
 
 $.extend(PromoSlide.prototype, {
   
   markerClassName: 'hasPromoSlidePlugin',
-  templateContentRegexp: /\{\{content\}\}/,
+  templateHeaderRegexp: /\{\{header\}\}/,
+  templateBodyRegexp: /\{\{body\}\}/,
+  dismissedByUser: false,
   
   setDefaults: function(settings) {
     $.extend(this._defaults, settings || {});
@@ -40,6 +47,11 @@ $.extend(PromoSlide.prototype, {
   },
   
   _attachPromoSlidePlugin: function(target, settings) {
+    if (window.innerHeight > document.body.offsetHeight) {
+      // no scroll bars, exiting.
+      return;
+    }
+    
     target = $(target);
     if (target.hasClass(this.markerClassName)) {
       return;
@@ -54,24 +66,44 @@ $.extend(PromoSlide.prototype, {
     var instance = $.data(element[0], PROP_NAME);
     $.extend(instance.settings, settings);
     
-    var templateMarkupParts = [];
-    templateMarkupParts.push("<div id='promoSlideContainer' class='promo-container'>");
+    var templateMarkupParts = [], tempHTML = '';
     
-    if (this.templateContentRegexp.test(instance.settings.templateHTML)) {
-      templateMarkupParts.push(instance.settings.templateHTML.replace(this.templateContentRegexp, instance.settings.textContent));
+    templateMarkupParts.push("<div id='promoSlideContainer' class='promo-slide-container'>");
+    
+    if (this.templateHeaderRegexp.test(instance.settings.templateHTML) && this.templateBodyRegexp.test(instance.settings.templateHTML)) {
+      tempHTML = instance.settings.templateHTML.replace(this.templateHeaderRegexp, instance.settings.headerText);
+      tempHTML = tempHTML.replace(this.templateBodyRegexp, instance.settings.bodyText);
+      templateMarkupParts.push(tempHTML);
     }
+    
     templateMarkupParts.push("</div>");
 
     $(element).append(templateMarkupParts.join(''));
     var c = $("#promoSlideContainer");
     c.hide();
     
+    this._handleEvents(c);
+  },
+  
+  _handleEvents: function(container) {
+    var self = this;
+    // TODO replace scroll event with checking periodically http://ejohn.org/blog/learning-from-twitter/
     $(window).bind('scroll', function() {
-      if ($(window).scrollTop() > 300 && !(c.is(":visible"))) {
-        c.slideLeftShow();
-      } else if ($(window).scrollTop() < 300 && c.is(":visible")) {
-        c.slideRightHide();
+      var scrolledToBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight,
+          containerIsVisible = container.is(":visible");
+      if (scrolledToBottom && !containerIsVisible && !self.dismissedByUser) {
+        container.slideLeftShow();
+      } else if (!scrolledToBottom && containerIsVisible) {
+        container.slideRightHide();
       }
+    });
+    
+    var c = $(container),
+        link = c.find('a.dismiss');
+    $(link).bind('click', function(e) {
+      e.preventDefault();
+      self.dismissedByUser = true;
+      c.slideRightHide();
     });
   }
 });

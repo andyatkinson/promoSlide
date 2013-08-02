@@ -3,21 +3,47 @@
     <script src='jquery-2.0.3.min.js'></script>
     <script src='jquery.promoSlide.js'></script>
     <style>
-      .promo-container {
+      .promo-slide-container {
+        padding:0;
+        margin:0;
+        border:0;
         position:fixed;
         bottom:0;
         right:0;
         width:400px;
-        height:50px;
-        padding:10px;
+        height:125px;
         background:#f0f0f0;
       }
-      .promo-container .one-line-text {
+      .promo-slide-container h1,
+      .promo-slide-container p {
+        font-family:Helvetica,Arial,sans-serif;
+        white-space:nowrap;
+      }
+      .promo-slide-container .top,
+      .promo-slide-container .bottom {
+        padding:3px 10px;
+      }
+      .promo-slide-container .top {
+        background:#f0f0f0;
+      }
+      .promo-slide-container .bottom {
+        background:#fff;
+      }
+      .promo-slide-container h1 {
         font-size:20px;
         line-height:20px;
-        font-family:Helvetica,Arial,sans-serif;
-        color:#555;
-        white-space:nowrap;
+        color:#333;
+      }
+      .promo-slide-container p {
+        font-size:16px;
+        line-height:16px;
+        color:#666;
+      }
+      .promo-slide-container a {
+        text-decoration:none;
+        color:#aaa;
+        font-size:11px;
+        line-height:12px;
       }
       
       body {
@@ -40,14 +66,14 @@
       <h3>Because we need more annoying things like this on the internet! :)</h3>
       <p>This type of slide-out promotional banner is being used on lots of websites. I wanted to make a simple plugin version of this pattern so that it could be used somewhere else.</p>
         
-    <div style="height:1000px;border:1px dotted;font-style:italic;color:#bbb;">This div is 1000 pixels tall. Scroll down to see a slideout promotion. Scroll up to see it disappear.</div>
+    <div style="height:1000px;border:1px dotted;font-style:italic;color:#bbb;">This box is 1000 pixels which should exceed your browser viewport and force scrollbars to appear. Scroll down to see a slideout promotion. Scroll up to see it disappear.</div>
     </div>
 
     <script>
     $(function() {
       $('body').promoSlide({
-        textContent: 'customize me!!',
-        templateHTML: '<p class="one-line-text" style="color:red;">{{content}}</p>'
+        headerText: 'interesting header',
+        bodyText: 'super interesting info'
       });
     });
     </script>
