@@ -27,8 +27,9 @@ function PromoSlide() {
     headerText: 'interesting header',
     bodyText: 'an interesting section',
     templateHTML: '<div id="promoSlideTemplate">' +
+                    '<a href="#" class="dismiss"><div class="close-icon"></div></a>' +
                     '<div class="top"><h1>{{header}}</h1></div>' +
-                    '<div class="bottom"><p>{{body}}</p>' +
+                    '<div class="bottom"><p class="content">{{body}}</p>' +
                     '<a href="#" class="dismiss">dismiss</a></div>' +
                   '</div>'
   };
@@ -87,16 +88,17 @@ $.extend(PromoSlide.prototype, {
   
   _handleEvents: function(container) {
     var self = this;
-    // TODO replace scroll event with checking periodically http://ejohn.org/blog/learning-from-twitter/
-    $(window).bind('scroll', function() {
+    setInterval(function() {
       var scrolledToBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight,
-          containerIsVisible = container.is(":visible");
+          containerIsVisible = container.is(":visible"),
+          scrollPositionNearBottom = (window.innerHeight + window.scrollY) / document.body.offsetHeight * 100 <= 75;
+   
       if (scrolledToBottom && !containerIsVisible && !self.dismissedByUser) {
         container.slideLeftShow();
-      } else if (!scrolledToBottom && containerIsVisible) {
+      } else if (!scrolledToBottom && containerIsVisible && scrollPositionNearBottom) {
         container.slideRightHide();
       }
-    });
+    }, 500);
     
     var c = $(container),
         link = c.find('a.dismiss');
