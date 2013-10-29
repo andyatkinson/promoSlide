@@ -22,6 +22,16 @@ Contributing
 ============
 Have an idea for something this should do? Please send me a message with the idea or even better, a pull request with the code. If you want to contribute a design that would be great as well.
 
+The plugin code should pass JavaScript Lint with zero errors and warnings. On OS X I did `brew install jslint` and the following to test the plugin file:
+
+    $ jsl -process jquery.promoSlide.js
+    JavaScript Lint 0.3.0 (JavaScript-C 1.5 2004-09-24)
+    Developed by Matthias Miller (http://www.JavaScriptLint.com)
+
+    jquery.promoSlide.js
+
+    0 error(s), 0 warning(s)
+
 MIT License
 ===
 Copyright (c) 2013 Andy Atkinson

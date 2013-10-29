@@ -27,11 +27,15 @@ function PromoSlide() {
     headerText: 'interesting header',
     bodyText: 'an interesting section',
     templateHTML: '<div id="promoSlideTemplate">' +
-                    '<a href="#" class="dismiss"><div class="close-icon"></div></a>' +
-                    '<div class="top"><h1>{{header}}</h1></div>' +
-                    '<div class="bottom"><p class="content">{{body}}</p>' +
-                    '<a href="#" class="dismiss">dismiss</a></div>' +
-                  '</div>'
+                    '<div class="top">' +
+                      '<span class="content"><h1>{{header}}</h1></span>' +
+                      '<span class="dismiss"><a href="#" class="dismiss">X</a></span>' +
+                    '</div>' +
+                    '<div class="bottom"><p class="content">{{body}}</p></div>' +
+                  '</div>',
+    headerBackgroundColor: "#fff",
+    headerTextColor: "#000",
+    hideByDefault: true
   };
 }
 
@@ -41,6 +45,7 @@ $.extend(PromoSlide.prototype, {
   templateHeaderRegexp: /\{\{header\}\}/,
   templateBodyRegexp: /\{\{body\}\}/,
   dismissedByUser: false,
+  pollingDelay: 250,
   
   setDefaults: function(settings) {
     $.extend(this._defaults, settings || {});
@@ -48,18 +53,22 @@ $.extend(PromoSlide.prototype, {
   },
   
   _attachPromoSlidePlugin: function(target, settings) {
-    if (window.innerHeight > document.body.offsetHeight) {
-      // no scroll bars, exiting.
-      return;
-    }
-    
     target = $(target);
     if (target.hasClass(this.markerClassName)) {
+      // prevent binding twice
       return;
     }
     target.addClass(this.markerClassName);
     var instance = {settings: $.extend({}, this._defaults)};
     $.data(target[0], PROP_NAME, instance);
+
+    if (instance.settings.hideByDefault) {
+      if (window.innerHeight > document.body.offsetHeight) {
+        // no scroll bars, exiting.
+        return;
+      }
+    }
+    
     this._populatePromoContainer(target, settings);
   },
   
@@ -81,9 +90,21 @@ $.extend(PromoSlide.prototype, {
 
     $(element).append(templateMarkupParts.join(''));
     var c = $("#promoSlideContainer");
-    c.hide();
+
+    if (instance.settings.hideByDefault) {
+      c.hide();
+    }
     
+    this._stylePromoContainer(element, settings);
     this._handleEvents(c);
+  },
+
+  _stylePromoContainer: function(element, settings) {
+    var instance = $.data(element[0], PROP_NAME);
+    $.extend(instance.settings, settings);
+    
+    $(element).find(".top .content").css("color", instance.settings.headerTextColor);
+    $(element).find(".top").css("background-color", instance.settings.headerBackgroundColor);
   },
   
   _handleEvents: function(container) {
@@ -98,7 +119,7 @@ $.extend(PromoSlide.prototype, {
       } else if (!scrolledToBottom && containerIsVisible && scrollPositionNearBottom) {
         container.slideRightHide();
       }
-    }, 500);
+    }, self.pollingDelay);
     
     var c = $(container),
         link = c.find('a.dismiss');
