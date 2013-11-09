@@ -6,7 +6,6 @@
   right:0;
   width:400px; /* TODO: config option, with default */
   z-index:999999; /* we want this to be on top of all other elements */
-  background-color: #fff; /* TODO config option */
   margin:0 2px 0 0; /* bump it out from the edge a bit */
 }
 .promo-slide-container .panel .panel-heading,
