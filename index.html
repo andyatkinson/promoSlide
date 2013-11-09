@@ -51,15 +51,15 @@
       <h4>Using Promo Slide on your site</h4>
       <p>A simple example of Promo Slide is below. It customizes the header text, and puts a link in the body text.</p>
       <pre>$<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'body'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>promoSlide<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
-      headerText<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Read more from blog</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
-      bodyText<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;a href='#'>10 Tips On Blogging&lt;/a></span><span style='color:#800000; '>"</span>
+      headerText<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Read more from my blog</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+      bodyText<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span>Latest article: <span style='color:#0000e6; '>&lt;a href='#'>10 Blogging Tips&lt;/a></span><span style='color:#800000; '>"</span>
 <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></pre>    
     </div>
 
       <div class="row">
         <h4>What does it look like?</h4>
         <p>Promo Slide uses a <code>panel</code> component from Bootstrap as the main container HTML. This way the panel markup is well-known, there are some built-in style variations, and additional styles can be added easily. The panel is wrapped in a plugin class <code>promo-slide-container</code>.</p> 
-        <p>The examples below are bootstrap panels using the <code>panel-primary</code>, <code>panel-info</code>, and <code>panel-danger</code> CSS classes. This is a non-interactive version. The <a href="http://bootswatch.com/flatly/">flatly styles are here</a>.</p>
+        <p>The examples below are bootstrap panels using the <code>panel-primary</code>, <code>panel-info</code>, and <code>panel-danger</code> CSS classes.</p>
 
 
       <div class="promo-slide-container" style="position:inherit;margin:20px 0 40px 0;padding:0;">
@@ -101,10 +101,10 @@
     </div>
 
     <div class="row" style="padding:20px 0">
-      <h3>Known issues:</h3>
+      <h4>Known issues:</h4>
       <ul>
         <li>Not tested on browsers other than Chrome and Safari. Would love to get help here.</li>
-        <li>Not supporting multiple lines of body text well. Could add this.</li>
+        <li>Not supporting multiple lines of body text.</li>
         <li>Bootstrap panel classes have to added to plugin source now. Can make this a config option later.</li>
       </ul>
     </div>
