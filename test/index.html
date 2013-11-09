@@ -1,43 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <title>Promo Slide jQuery plugin - Plugin author: Andy Atkinson</title>
+  <meta name="author" content="Andy Atkinson">
+  <meta name="description" content="jQuery plugin to promote additional pages on your site in a way that is unobtrusive to the visitor.">
+        
   <script src='jquery-1.10.2.min.js'></script>
   <script src='qunit.js'></script>
   <script src='../jquery.promoSlide.js'></script>
   <script src='tests.js'></script>
   <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="../css/promoSlide.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="screen" />
 </head>
 <body>
-  <h1 id="qunit-header">QUnit Tests</h1>
-  <h2 id="qunit-banner"></h2>
-  <h2 id="qunit-userAgent"></h2>
-  <ol id="qunit-tests"></ol>
-  
-  <div id='testing'></div>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Promo Slide</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://andyatkinson.com">Go to andyatkinson.com &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
 
-  <h2>Example Promo Slide template</h2>
-  <p>Give the container a class of <code>promo-slide-container</code></p>
+    <div class="page-header">
+      <div class="row">
+        <div class="col-lg-6">
+        </div>
+      </div>
+    </div> 
 
-  <h3>Add a whole lot of copy to make the page long</h3>
+    <div class="row">
+      <div class="well">
+        <h3>Hi! Thanks for checking out Promo Slide.</h3>
+        <ul>
+          <li>Promote additional pages on your site. More page views!</li>
+          <li>Promote a newsletter sign-up link or form in an unobtrusive way.</li>
+        </ul>
+        <p><a href="mailto:andyatkinson@gmail.com">Email me</a> with ideas or feedback. This demo page was made with the <a href="http://bootswatch.com/flatly/">flatly bootstrap theme</a>.</p>
+        <p>This plugin <a href="https://github.com/andyatkinson/promoSlide">source is on github</a>.</p>
+      </div>
+    </div>
 
-  <p>Sint four loko fashion axe Pitchfork, beard aliqua Banksy ethical in ut est ad +1 kogi Etsy. Tote bag assumenda id occaecat, Blue Bottle cliche ea culpa Thundercats semiotics Cosby sweater ad street art. Trust fund cornhole +1, sapiente try-hard craft beer jean shorts. Trust fund messenger bag nisi non Thundercats selvage. Literally YOLO meh, meggings photo booth mustache aute velit. Organic master cleanse actually, craft beer McSweeney's tote bag gentrify excepteur Terry Richardson dolore viral Portland mumblecore sustainable. IPhone Wes Anderson shabby chic meggings, yr Austin street art exercitation direct trade.</p>
+    <div class="row" style="padding:20px 0">
+      <h4>Using Promo Slide on your site</h4>
+      <p>A simple example of Promo Slide is below. It customizes the header text, and puts a link in the body text.</p>
+      <pre>$<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'body'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>promoSlide<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+      headerText<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Read more from blog</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+      bodyText<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;a href='#'>10 Tips On Blogging&lt;/a></span><span style='color:#800000; '>"</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></pre>    
+    </div>
 
-  <p>Yr nisi post-ironic, McSweeney's four loko velit mumblecore VHS Helvetica. Ugh kitsch Portland, Truffaut pork belly ex excepteur Brooklyn pop-up. Flexitarian readymade excepteur reprehenderit semiotics photo booth. Food truck forage authentic roof party. Et pariatur minim irure. Quis leggings gastropub authentic, est locavore kogi polaroid iPhone blog. Skateboard Schlitz Wes Anderson assumenda Bushwick id.</p>
+      <div class="row">
+        <h4>What does it look like?</h4>
+        <p>Promo Slide uses a <code>panel</code> component from Bootstrap as the main container HTML. This way the panel markup is well-known, there are some built-in style variations, and additional styles can be added easily. The panel is wrapped in a plugin class <code>promo-slide-container</code>.</p> 
+        <p>The examples below are bootstrap panels using the <code>panel-primary</code>, <code>panel-info</code>, and <code>panel-danger</code> CSS classes. This is a non-interactive version. The <a href="http://bootswatch.com/flatly/">flatly styles are here</a>.</p>
 
-  <p>Street art deep v kitsch Austin yr. Brooklyn cray eiusmod, aesthetic veniam freegan velit sint mixtape ut Neutra gentrify. Pariatur banh mi gluten-free XOXO. Enim banh mi +1 nostrud reprehenderit kitsch, bitters asymmetrical beard incididunt Brooklyn odio kale chips. Literally cornhole YOLO, before they sold out pork belly readymade mollit dreamcatcher. Narwhal brunch wayfarers in Vice exercitation fanny pack, Marfa Bushwick id asymmetrical. Placeat Blue Bottle 90's eiusmod, cornhole consequat veniam chillwave try-hard viral Helvetica art party.</p>
 
-  <p>Literally tousled selvage labore church-key, aesthetic accusamus post-ironic mlkshk assumenda raw denim XOXO esse. Trust fund sustainable Cosby sweater incididunt Schlitz messenger bag, officia PBR. Cillum culpa Banksy Truffaut, narwhal retro commodo pug Williamsburg chillwave Tumblr umami drinking vinegar artisan hella. Cosby sweater pork belly banh mi, Portland flannel aesthetic trust fund 90's accusamus church-key bicycle rights. Delectus jean shorts umami, Austin eu gluten-free locavore skateboard vero exercitation. Selvage meggings cornhole, food truck DIY assumenda mustache. Deserunt post-ironic roof party laboris, salvia chambray trust fund Etsy chillwave retro pariatur magna try-hard farm-to-table.</p>
+      <div class="promo-slide-container" style="position:inherit;margin:20px 0 40px 0;padding:0;">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <a href="#" class="dismiss">&times;</a>
+            <h3 class="panel-title">{{headerText}}</h3>
+          </div>
+          <div class="panel-body">
+            {{bodyText}} 
+          </div>
+        </div>
+      </div>
+
+    
+      <div class="promo-slide-container" style="position:inherit;margin:20px 0 40px 0;padding:0;">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <a href="#" class="dismiss">&times;</a>
+            <h3 class="panel-title">{{headerText}}</h3>
+          </div>
+          <div class="panel-body">
+            {{bodyText}} 
+          </div>
+        </div>
+      </div>
+
+      <div class="promo-slide-container" style="position:inherit;margin:20px 0 40px 0;padding:0;">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <a href="#" class="dismiss">&times;</a>
+            <h3 class="panel-title">{{headerText}}</h3>
+          </div>
+          <div class="panel-body">
+            {{bodyText}} 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="padding:20px 0">
+      <h3>Known issues:</h3>
+      <ul>
+        <li>Not tested on browsers other than Chrome and Safari. Would love to get help here.</li>
+        <li>Not supporting multiple lines of body text well. Could add this.</li>
+        <li>Bootstrap panel classes have to added to plugin source now. Can make this a config option later.</li>
+      </ul>
+    </div>
+
+    <div class="row" style="padding:20px 0">
+      <h1 id="qunit-header">Tests</h1>
+      <h2 id="qunit-userAgent"></h2>
+      <ol id="qunit-tests"></ol>
+      <div id='testing'></div>
+    </div>
+
+
+  <div class="row">
+    <h4>Add a whole lot of copy to make the page long</h4>
+
+    <p>Sint four loko fashion axe Pitchfork, beard aliqua Banksy ethical in ut est ad +1 kogi Etsy. Tote bag assumenda id occaecat, Blue Bottle cliche ea culpa Thundercats semiotics Cosby sweater ad street art. Trust fund cornhole +1, sapiente try-hard craft beer jean shorts. Trust fund messenger bag nisi non Thundercats selvage. Literally YOLO meh, meggings photo booth mustache aute velit. Organic master cleanse actually, craft beer McSweeney's tote bag gentrify excepteur Terry Richardson dolore viral Portland mumblecore sustainable. IPhone Wes Anderson shabby chic meggings, yr Austin street art exercitation direct trade.</p>
+
+    <p>Yr nisi post-ironic, McSweeney's four loko velit mumblecore VHS Helvetica. Ugh kitsch Portland, Truffaut pork belly ex excepteur Brooklyn pop-up. Flexitarian readymade excepteur reprehenderit semiotics photo booth. Food truck forage authentic roof party. Et pariatur minim irure. Quis leggings gastropub authentic, est locavore kogi polaroid iPhone blog. Skateboard Schlitz Wes Anderson assumenda Bushwick id.</p>
+
+    <p>Street art deep v kitsch Austin yr. Brooklyn cray eiusmod, aesthetic veniam freegan velit sint mixtape ut Neutra gentrify. Pariatur banh mi gluten-free XOXO. Enim banh mi +1 nostrud reprehenderit kitsch, bitters asymmetrical beard incididunt Brooklyn odio kale chips. Literally cornhole YOLO, before they sold out pork belly readymade mollit dreamcatcher. Narwhal brunch wayfarers in Vice exercitation fanny pack, Marfa Bushwick id asymmetrical. Placeat Blue Bottle 90's eiusmod, cornhole consequat veniam chillwave try-hard viral Helvetica art party.</p>
+
+    <p>Literally tousled selvage labore church-key, aesthetic accusamus post-ironic mlkshk assumenda raw denim XOXO esse. Trust fund sustainable Cosby sweater incididunt Schlitz messenger bag, officia PBR. Cillum culpa Banksy Truffaut, narwhal retro commodo pug Williamsburg chillwave Tumblr umami drinking vinegar artisan hella. Cosby sweater pork belly banh mi, Portland flannel aesthetic trust fund 90's accusamus church-key bicycle rights. Delectus jean shorts umami, Austin eu gluten-free locavore skateboard vero exercitation. Selvage meggings cornhole, food truck DIY assumenda mustache. Deserunt post-ironic roof party laboris, salvia chambray trust fund Etsy chillwave retro pariatur magna try-hard farm-to-table.</p>
+    
+    <p>Literally tousled selvage labore church-key, aesthetic accusamus post-ironic mlkshk assumenda raw denim XOXO esse. Trust fund sustainable Cosby sweater incididunt Schlitz messenger bag, officia PBR. Cillum culpa Banksy Truffaut, narwhal retro commodo pug Williamsburg chillwave Tumblr umami drinking vinegar artisan hella. Cosby sweater pork belly banh mi, Portland flannel aesthetic trust fund 90's accusamus church-key bicycle rights. Delectus jean shorts umami, Austin eu gluten-free locavore skateboard vero exercitation. Selvage meggings cornhole, food truck DIY assumenda mustache. Deserunt post-ironic roof party laboris, salvia chambray trust fund Etsy chillwave retro pariatur magna try-hard farm-to-table.</p>
+   
+    <p>Literally tousled selvage labore church-key, aesthetic accusamus post-ironic mlkshk assumenda raw denim XOXO esse. Trust fund sustainable Cosby sweater incididunt Schlitz messenger bag, officia PBR. Cillum culpa Banksy Truffaut, narwhal retro commodo pug Williamsburg chillwave Tumblr umami drinking vinegar artisan hella. Cosby sweater pork belly banh mi, Portland flannel aesthetic trust fund 90's accusamus church-key bicycle rights. Delectus jean shorts umami, Austin eu gluten-free locavore skateboard vero exercitation. Selvage meggings cornhole, food truck DIY assumenda mustache. Deserunt post-ironic roof party laboris, salvia chambray trust fund Etsy chillwave retro pariatur magna try-hard farm-to-table.</p>
+   
+    <p>Literally tousled selvage labore church-key, aesthetic accusamus post-ironic mlkshk assumenda raw denim XOXO esse. Trust fund sustainable Cosby sweater incididunt Schlitz messenger bag, officia PBR. Cillum culpa Banksy Truffaut, narwhal retro commodo pug Williamsburg chillwave Tumblr umami drinking vinegar artisan hella. Cosby sweater pork belly banh mi, Portland flannel aesthetic trust fund 90's accusamus church-key bicycle rights. Delectus jean shorts umami, Austin eu gluten-free locavore skateboard vero exercitation. Selvage meggings cornhole, food truck DIY assumenda mustache. Deserunt post-ironic roof party laboris, salvia chambray trust fund Etsy chillwave retro pariatur magna try-hard farm-to-table.</p>
+   
+    <p>Literally tousled selvage labore church-key, aesthetic accusamus post-ironic mlkshk assumenda raw denim XOXO esse. Trust fund sustainable Cosby sweater incididunt Schlitz messenger bag, officia PBR. Cillum culpa Banksy Truffaut, narwhal retro commodo pug Williamsburg chillwave Tumblr umami drinking vinegar artisan hella. Cosby sweater pork belly banh mi, Portland flannel aesthetic trust fund 90's accusamus church-key bicycle rights. Delectus jean shorts umami, Austin eu gluten-free locavore skateboard vero exercitation. Selvage meggings cornhole, food truck DIY assumenda mustache. Deserunt post-ironic roof party laboris, salvia chambray trust fund Etsy chillwave retro pariatur magna try-hard farm-to-table.</p>
+  </div>
+
+  </div>
 
   <script>
     $(function() {
       $("#testing").promoSlide({
-        headerBackgroundColor: "#778899",
-        headerTextColor: "#fff"
+         headerText: "Read more from my blog",
+         bodyText: "Latest article: <a href='#'>10 Blogging Tips</a>"
       });
     });
   </script>
-
-  
 </body>
 </html>

@@ -4,77 +4,33 @@
   position:fixed;
   bottom:0;
   right:0;
-  width:400px;
-  border-radius:3px;
-  -moz-box-shadow:    0 0 10px rgba(1,1,1,0.1);
-   -webkit-box-shadow: 0 0 10px rgba(1,1,1,0.1);
-   box-shadow:         0 0 10px rgba(1,1,1,0.1);
-  z-index:99999;
-  height: 100px;
-  margin: 0px 2px 5px 0px;
-  background-color:#fff;
+  width:400px; /* TODO: config option, with default */
+  z-index:999999; /* we want this to be on top of all other elements */
+  background-color: #fff; /* TODO config option */
+  margin:0 2px 0 0; /* bump it out from the edge a bit */
 }
-.promo-slide-container .top h1,
-.promo-slide-container .bottom p, 
-.promo-slide-container .top .dismiss a {
-  font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  text-rendering:optimizeLegibility;
-}
-.promo-slide-container .top,
-.promo-slide-container .bottom {
-  padding:3px 10px;
-}
-.promo-slide-container .top {
-  clear:both;
-  height:30px;
-}
-.promo-slide-container .bottom {
-  background:#fff;
-  padding:10px;
-  -moz-box-shadow:    inset 0 0 2px rgba(1,1,1,0.3);
-   -webkit-box-shadow: inset 0 0 2px rgba(1,1,1,0.3);
-   box-shadow:         inset 0 0 2px rgba(1,1,1,0.3);
-}
-.promo-slide-container .top .content {
-  float: left;
-}
-.promo-slide-container .top .dismiss {
-  float:right;
-  margin:4px 0 0 0;
-}
-.promo-slide-container .top .dismiss a {
-  color:#fff;
-}
-.promo-slide-container h1 {
-  font-size:20px;
-  line-height:20px;
-  font-weight:bold;
-  margin-top:3px;
-  margin-bottom:5px;  
+.promo-slide-container .panel .panel-heading,
+.promo-slide-container .panel .panel-body {
+  /* this is for the animation */
   white-space:nowrap;
 }
-.promo-slide-container .bottom p {
-  color:#222;
-  font-size:16px;
-  font-weight:normal;
+.promo-slide-container .panel .panel-heading {
+  height:2.5em;
 }
-.promo-slide-container .bottom .content {
-  margin: 0;
-  padding: 0;
-  height: 60px;
-  width: 372px;
-  overflow: hidden;
+.promo-slide-container .panel .panel-body {
+  height:4em;
 }
-.promo-slide-container .bottom .content a {
-  font-size: 15px;
-  line-height: 15px;
-}
-.promo-slide-container a {
+.promo-slide-container .panel .panel-heading a.dismiss {
+  float:right;
+  font-size:1.5em;
+  margin-top:-.5em;
+  color: #ccc;
   text-decoration:none;
-  color:#aaa;
-  font-size:11px;
-  line-height:12px;
 }
-.promo-slide-container a:hover {
-  text-decoration:underline;
+.promo-slide-container .panel .panel-heading a.dismiss:hover {
+  color:#fff;
 }
+
+.promo-slide-container .panel .panel-heading .panel-title{}
+.promo-slide-container .panel .panel-body {}
+

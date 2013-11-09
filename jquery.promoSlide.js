@@ -26,16 +26,13 @@ function PromoSlide() {
   this._defaults = {
     headerText: 'interesting header',
     bodyText: 'an interesting section',
-    templateHTML: '<div id="promoSlideTemplate">' +
-                    '<div class="top">' +
-                      '<span class="content"><h1>{{header}}</h1></span>' +
-                      '<span class="dismiss"><a href="#" class="dismiss">X</a></span>' +
+    templateHTML: '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                      '<a href="#" class="dismiss">&times;</a>' +
+                      '<h3 class="panel-title">{{header}}</h3>' +
                     '</div>' +
-                    '<div class="bottom"><p class="content">{{body}}</p></div>' +
-                  '</div>',
-    headerBackgroundColor: "#fff",
-    headerTextColor: "#000",
-    hideByDefault: true
+                    '<div class="panel-body">{{body}}</div>' +
+                  '</div>'
   };
 }
 
@@ -44,8 +41,8 @@ $.extend(PromoSlide.prototype, {
   markerClassName: 'hasPromoSlidePlugin',
   templateHeaderRegexp: /\{\{header\}\}/,
   templateBodyRegexp: /\{\{body\}\}/,
-  dismissedByUser: false,
-  pollingDelay: 250,
+  dismissedByUser: false, /* this could be written out to a cookie */
+  pollingDelay: 200,
   
   setDefaults: function(settings) {
     $.extend(this._defaults, settings || {});
@@ -62,11 +59,9 @@ $.extend(PromoSlide.prototype, {
     var instance = {settings: $.extend({}, this._defaults)};
     $.data(target[0], PROP_NAME, instance);
 
-    if (instance.settings.hideByDefault) {
-      if (window.innerHeight > document.body.offsetHeight) {
-        // no scroll bars, exiting.
-        return;
-      }
+    if (window.innerHeight > document.body.offsetHeight) {
+      /* There are no scroll bars, exiting. */
+      return;
     }
     
     this._populatePromoContainer(target, settings);
@@ -91,9 +86,7 @@ $.extend(PromoSlide.prototype, {
     $(element).append(templateMarkupParts.join(''));
     var c = $("#promoSlideContainer");
 
-    if (instance.settings.hideByDefault) {
-      c.hide();
-    }
+    c.hide();
     
     this._stylePromoContainer(element, settings);
     this._handleEvents(c);
@@ -102,9 +95,7 @@ $.extend(PromoSlide.prototype, {
   _stylePromoContainer: function(element, settings) {
     var instance = $.data(element[0], PROP_NAME);
     $.extend(instance.settings, settings);
-    
-    $(element).find(".top .content").css("color", instance.settings.headerTextColor);
-    $(element).find(".top").css("background-color", instance.settings.headerBackgroundColor);
+    /* TODO additional style customizations */  
   },
   
   _handleEvents: function(container) {
@@ -115,9 +106,9 @@ $.extend(PromoSlide.prototype, {
           scrollPositionNearBottom = (window.innerHeight + window.scrollY) / document.body.offsetHeight * 100 <= 75;
    
       if (scrolledToBottom && !containerIsVisible && !self.dismissedByUser) {
-        container.slideLeftShow();
+        container.slideLeftShow(200);
       } else if (!scrolledToBottom && containerIsVisible && scrollPositionNearBottom) {
-        container.slideRightHide();
+        container.slideRightHide(200);
       }
     }, self.pollingDelay);
     
