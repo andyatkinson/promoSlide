@@ -1,5 +1,13 @@
-/*
-  // global styles from bootstrap flatly theme
+/* Bootstrap Flatly theme styles
+ *
+ *
+
+
+*, *:before, *:after {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
 .promo-slide-container {
   font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size:15px;
@@ -19,12 +27,18 @@
   background-color:#2c3e50;
   border-color:#2c3e50;
 }
-
 .promo-slide-container .panel-primary {
   border-color:#2c3e50;
 }
-*/
+.promo-slide-container a {
+  color:#18bc9c;
+  background:transparent;
+}
+.promo-slide-container a:hover {
+  text-decoration:underline;
+}
 
+*/
 
 .promo-slide-container .panel-heading {
   padding:10px 15px;
