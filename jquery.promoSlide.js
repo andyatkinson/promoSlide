@@ -117,7 +117,7 @@ $.extend(PromoSlide.prototype, {
     $(link).bind('click', function(e) {
       e.preventDefault();
       self.dismissedByUser = true;
-      c.slideRightHide();
+      c.slideRightHide(200);
     });
   }
 });
