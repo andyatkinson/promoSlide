@@ -4,11 +4,6 @@
   <title>Promo Slide jQuery plugin - Plugin author: Andy Atkinson</title>
   <meta name="author" content="Andy Atkinson">
   <meta name="description" content="jQuery plugin to promote additional pages on your site in a way that is unobtrusive to the visitor.">
-        
-  <script src='jquery-1.10.2.min.js'></script>
-  <script src='qunit.js'></script>
-  <script src='jquery.promoSlide.js'></script>
-  <script src='tests.js'></script>
   <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="promoSlide.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="bootstrap.min.css" type="text/css" media="screen" />
@@ -113,6 +108,7 @@
       <h1 id="qunit-header">Tests</h1>
       <h2 id="qunit-userAgent"></h2>
       <ol id="qunit-tests"></ol>
+      <div id='page-example'></div>
       <div id='testing'></div>
     </div>
 
@@ -145,13 +141,9 @@
 
   </div>
 
-  <script>
-    $(function() {
-      $("#testing").promoSlide({
-         headerText: "Read more from my blog",
-         bodyText: "Latest article: <a href='#'>10 Blogging Tips</a>"
-      });
-    });
-  </script>
+  <script src='jquery-1.10.2.min.js'></script>
+  <script src='qunit.js'></script>
+  <script src='jquery.promoSlide.js'></script>
+  <script src='tests.js'></script>
 </body>
 </html>

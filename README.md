@@ -13,9 +13,15 @@ How to use it
 
 Contributing
 ------------
-The plugin code should pass JavaScript Lint with zero errors and warnings. On OS X I did `brew install jslint` and the following to test the plugin file. Please add a unit test to the QUnit tests if possible as well.
+The plugin code should pass JavaScript Lint with zero errors and warnings. `jsl` on OS X is available as a [homebrew binary install](https://github.com/Homebrew/homebrew-binary). To install `jslint`:
+
+    brew tap homebrew/binary
+    brew install jsl
+
+To use it:
 
     $ jsl -process jquery.promoSlide.js
+
     JavaScript Lint 0.3.0 (JavaScript-C 1.5 2004-09-24)
     Developed by Matthias Miller (http://www.JavaScriptLint.com)
 
