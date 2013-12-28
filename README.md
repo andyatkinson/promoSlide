@@ -1,19 +1,19 @@
-Promo Slide is a jQuery plugin that makes it easy to show more content to visitors of your site. After the visitor scrolls to the bottom of the page, they see a slide-out panel with a link to more content. 
+Promo Slide is a jQuery plugin to show content on your site. After scrolling to the bottom of the page, a slide-out panel appears with more content. 
 
-Demo
-----
+The container HTML can be customized. Template placeholders can be used, and then passed in dynamically at the time the plugin is initialized in the DOM.
+
+The plugin source is written in coffeescript.
+
+## Demo
 [http://andyatkinson.com/projects/promoSlide](http://andyatkinson.com/projects/promoSlide)
 
-How to use it
--------------
+## How to use it
 
     $('body').promoSlide();
 
-    
 
-Contributing
-------------
-The plugin code should pass JavaScript Lint with zero errors and warnings. `jsl` on OS X is available as a [homebrew binary install](https://github.com/Homebrew/homebrew-binary). To install `jslint`:
+## Contributing
+Source code changes should be done on the coffeescript version of the file. The generated javascript file should pass JSLint validation with no warnings or errors. `jsl` on OS X is available as a [homebrew binary install](https://github.com/Homebrew/homebrew-binary). To install `jslint`:
 
     brew tap homebrew/binary
     brew install jsl
@@ -29,8 +29,7 @@ To use it:
 
     0 error(s), 0 warning(s)
 
-MIT License
-------------
+## MIT License
 Copyright (c) 2013 Andy Atkinson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
