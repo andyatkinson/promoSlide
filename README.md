@@ -29,6 +29,11 @@ To use it:
 
     0 error(s), 0 warning(s)
 
+## Grunt and qunit
+Grunt is being used with qunit to run tests. To install, run `npm install` to install the packages, which should create a node_modules directory (this is ignored from git). To run the qunit tests:
+
+    grunt qunit
+
 ## MIT License
 Copyright (c) 2013 Andy Atkinson
 

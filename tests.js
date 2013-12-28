@@ -1,3 +1,5 @@
+QUnit.config.autostart = false;
+
 $(function() {
   // multiple containers can be on the page but they clobber each other, last one in wins.
   test("Defaults and options", function() {
@@ -26,4 +28,8 @@ $(function() {
                             "</div></div>";
     equal($.promoSlide.templateContent(), expectedHTML);
   });
+});
+
+$(function() {
+  start();
 });
