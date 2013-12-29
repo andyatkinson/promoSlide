@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-cli": "0.1.11",
     "grunt-contrib-qunit": "0.3.0"
   }
 }
