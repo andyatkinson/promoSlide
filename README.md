@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/andyatkinson/promoSlide.png?branch=master)](https://travis-ci.org/andyatkinson/promoSlide)
+
 Promo Slide is a jQuery plugin to show content on your site. After scrolling to the bottom of the page, a slide-out panel appears with more content. 
 
 The container HTML can be customized. Template placeholders can be used, and then passed in dynamically at the time the plugin is initialized in the DOM.
