@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/andyatkinson/promoSlide.png?branch=master)](https://travis-ci.org/andyatkinson/promoSlide)
+## Promo Slide [![Build Status](https://travis-ci.org/andyatkinson/promoSlide.png?branch=master)](https://travis-ci.org/andyatkinson/promoSlide) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andyatkinson/promoslide/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Promo Slide is a jQuery plugin to show content on your site. After scrolling to the bottom of the page, a slide-out panel appears with more content. 
 
@@ -51,5 +51,4 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andyatkinson/promoslide/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
