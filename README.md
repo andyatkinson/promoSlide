@@ -1,4 +1,4 @@
-## Promo Slide [![Build Status](https://travis-ci.org/andyatkinson/promoSlide.png?branch=master)](https://travis-ci.org/andyatkinson/promoSlide) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andyatkinson/promoslide/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+## Promo Slide [![Build Status](https://travis-ci.org/andyatkinson/promoSlide.png?branch=master)](https://travis-ci.org/andyatkinson/promoSlide)
 
 Promo Slide is a jQuery plugin to show content on your site. After scrolling to the bottom of the page, a slide-out panel appears with more content. 
 
